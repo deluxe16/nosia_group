@@ -1,0 +1,112 @@
+.palette-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background: #ffffff;
+  padding: 40px;
+}
+
+.palette-container {
+  display: flex;
+  width: 55%;
+  height: 440px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.color-strip {
+  flex: 1;
+  position: relative;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  transition: flex 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 28px;
+}
+
+/* .color-strip:hover {
+  flex: 1.8;
+} */
+
+/* Hover overlay shimmer */
+.strip-hover-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+      transparent 40%,
+      rgba(255, 255, 255, 0.08) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.color-strip:hover .strip-hover-overlay {
+  opacity: 1;
+}
+
+/* Bottom indicator — dot + label */
+.strip-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition:
+    opacity 0.3s ease 0.05s,
+    transform 0.3s ease 0.05s;
+}
+
+.color-strip:hover .strip-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.strip-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: block;
+  opacity: 0.7;
+}
+
+.strip-label {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.85;
+  white-space: nowrap;
+}
+
+/* ─── Keyboard focus ring ─── */
+.color-strip:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.7);
+  outline-offset: -3px;
+  z-index: 10;
+}
+
+.dash-link-container {
+  cursor: pointer;
+}
+
+.hover-scale-item {
+  display: inline-block;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-scale-item:hover {
+  transform: scale(1.15);
+}
+
+.hover-scale-item.dash-item:hover {
+  transform: scale(1.8);
+}
