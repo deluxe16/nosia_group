@@ -25,30 +25,14 @@ export default function ColorPalette() {
                     window.open(color.externalLink, '_blank');
                   }
                 }}
-                style={{
-                  position: 'absolute',
-                  bottom: '24px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  gap: '4px',
-                  zIndex: 10,
-                }}
               >
-                <span 
-                  className="hover-scale-item" 
-                  style={{ color: '#FDF5E6', fontSize: '11px', fontFamily: 'Inter, system-ui, sans-serif', padding: '4px', whiteSpace: 'nowrap', fontWeight: 'bold' }}
-                >
+                <span className="hover-scale-item strip-custom-label">
                   {color.label}
                 </span>
-                <div className="hover-scale-item dash-item" style={{ padding: '4px' }}>
+                <div className="hover-scale-item dash-item">
                   <div
-                    style={{
-                      backgroundColor: color.dashColor,
-                      width: '12px',
-                      height: '2px',
-                      borderRadius: '1px'
-                    }}
+                    className="strip-dash-line"
+                    style={{ backgroundColor: color.dashColor }}
                   />
                 </div>
               </div>
